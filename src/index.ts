@@ -12,7 +12,8 @@ export default {
     const url = new URL(request.url),
         model = url.searchParams.get('model') || '@cf/mistral/mistral-7b-instruct-v0.1',
         max_tokens = parseInt(url.searchParams.get('max_tokens') || 2000),
-        system = url.searchParams.get('system') || `You are an AI assistant. Be as helpful as possible. Keep your responses short and concise. Use Markdown to wrap code snippets.`, message = url.searchParams.get('message');
+        system = url.searchParams.get('system') || `You are an AI assistant. Be as helpful as possible. Keep your responses short and concise. Use Markdown as needed.`,
+        message = url.searchParams.get('message');
 
     const messages = [
       { role: 'system', content: system },
